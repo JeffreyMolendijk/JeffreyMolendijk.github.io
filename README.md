@@ -7,6 +7,6 @@ I am a PhD graduate from the University of Queensland. I primarily use bioinform
 ## Projects
 1. [PubMap](https://jeffreymolendijk.shinyapps.io/PubMap/): An analysis tool for PubMed queries (for confused researchers.)
 2. [PostgreSQL in R](https://jeffreymolendijk.github.io/PostgreSQL/): A tutorial on using PostgreSQL in R.
-3. [lipidr](https://www.lipidr.org): Data Mining and Analysis of Lipidomics Datasets in R
+3. [lipidr](https://www.lipidr.org): Data Mining and Analysis of Lipidomics Datasets in R (co-author)
 
 More projects to be added soon!
