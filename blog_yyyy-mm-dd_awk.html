@@ -46,14 +46,16 @@
 						<div class="inner">
 							<h1>AWK for bioinformatics</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p>Introduction, history and reason for writing post. Interestingly, awk was named after its developers by combining the first letter of their surnames;  Aho, Weinberger & Kernighan. To get started using AWK, make sure to read <a href="https://www.gnu.org/software/gawk/manual/gawk.html" target="_blank">the GNU AWK User's Guide</a>, which is an excellent resource explaining the syntax of awk and showing its application through many examples.</p>
+							<p align="justify">Have you ever been been stuck trying to seach or alter a large document whilst using the Shell, without resorting to your favorite programming language? Searching Stackoverflow would most likely have resulted in a one-line solution using either an AWK command as the accepted answer. AWK is a tool that may seem daunting at first, but is so incredibly versatile that you'll wonder why you haven't been using it all along! Although I would typically wrangle data using R or Python, I discovered that this 45 year old command line tool significantly simplified my workflows. Here I'll describe AWK, its syntax and applications.</p>
+							<p align="justify">Introduction, history and reason for writing post. Interestingly, awk was named after its developers by combining the first letter of their surnames;  Aho, Weinberger & Kernighan. To get started using AWK, make sure to read <a href="https://www.gnu.org/software/gawk/manual/gawk.html" target="_blank">the GNU AWK User's Guide</a>, which is an excellent resource explaining the syntax of awk and showing its application through many examples.</p>
 							<h4>Basics of AWK</h4>
-							<p>The syntax of AWK might look daunting at first, but becomes very intuitive once you are familiar with its components. You can get started with simple commands to retrieve or edits text, and might even begin combining multiple search patterns or actions into a single awk command.</p>
+							<p align="justify">The syntax of AWK might look daunting at first, but becomes very intuitive once you are familiar with its components. You can get started with simple commands to retrieve or edits text, and might even begin combining multiple search patterns or actions into a single awk command.</p>
 							<pre><code>awk 'pattern {action}'
 
 awk 'someword {print $0}' file.txt</code></pre>
 							<h4>Applications of AWK</h4>
-							<p>Applications of AWK in bioinformatics</p>
+							<p align="justify">Applications of AWK in bioinformatics > my work > editing fasta > editing input or output of tools > Filtering species > foldx, edit to add filename, then concatenate > locnuclei, keep every 9th line, then combine.</p>
+							<p>Final note</p>
 						</div>
 					</div>
 
