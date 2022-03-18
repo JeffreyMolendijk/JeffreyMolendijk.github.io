@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>AWK: an introduction</title>
+		<title>DataEng Meetup - March 2022</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -44,13 +44,23 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
+							<h1>DataEng Meetup - March 2022</h1>
+							<span class="image main"><img src="images/cloud_banner_slim.jpg" alt="" /></span>
 							<xmp>
-!! March Online DataEng Meetup
+>>>
+%%Event details%%§
 Date: 17-03-2022§
-Channel: https://www.youtube.com/dataengau§
-Video link: https://www.youtube.com/watch?v=k5Exqls7QDc&ab_channel=DataEngAU§
+Channel: @@https://www.youtube.com/dataengau@@§
+Video link: @@https://www.youtube.com/watch?v=k5Exqls7QDc&ab_channel=DataEngAU@@§
 Hosted by: Peter Hanssens
+>>>
 
+<p align="justify">
+DataEng is a monthly data engineering meetup held online, and in various Australian cities. This meeting is focused on presenting data engineering technologies, fundamentals and applications.
+The first talk this week was about Materialize, a low-latency streaming database used to efficiently process data that is frequently updated.
+The second talk discusses the fundamentals of the 'data mesh', followed by a live demonstration of the Confluent Cloud.
+Finally, the last talk discussed how scalable real time analytics applications can be used, and how to deploy them using the 'Imply' products.
+</p>
 §
 
 !!! Up and running with Materialize
@@ -76,11 +86,11 @@ Hosted by: Peter Hanssens
 !!! Data Mesh 101
 %%Brett Randall, Senior Solutions Engineer, Confluent%%
 
-*	Data mesh principles: There are many set standards in software architecture, but data mesh are the principles for data usage. 
-*	Principle 1: Domain-driven design. This is a common architecture, meaning that whoever publishes data, should be the one who understands it. This model is different than a centralized owner, who must know all about the data, but this type has shown to have issues.
-*	Principle 2: Data as a product. Data should be viewed as a product, and treated as such. This means that different teams could work on the data, and bug reports should able to be submitted. Start thinking about how the data should be available, in which regions and in which regions.
-*	Principle 3: Self service platform. It requires a catalog for the catalog, metadata (e.g. is the data current, security, sharing rules, encryption status etc), and have set quality standards. It is about moving from lambda to kappa architectures. Data lineage is also included, allowing you to see where the data came from, and what has been done with it. Finally, think about how data is accessed (e.g. stream or API).
-*	Principle 4: Federated governance. You can have both centralized and decentralized governance, by setting general rules but also letting teams set their own rules. For example, you can set common naming and semantics, and set common error handling procedures. 
+*	Data mesh is an approach based on a modern & distributed architecture for analytical data management. Just like commonly used standards in software architecture, data mesh is a paradigm based on four principles for big analytical data management. 
+	#	**Domain-driven design:** This is a common architecture, meaning that whoever publishes data, should be the one who understands it. This model is different than a centralized owner, who must know all about the data, but this type has shown to have issues.
+	#	**Data as a product:** Data should be viewed as a product, and treated as such. This means that different teams could work on the data, and bug reports should able to be submitted. Start thinking about how the data should be available, in which regions and in which regions.
+	#	**Self service platform:** It requires a catalog for the catalog, metadata (e.g. is the data current, security, sharing rules, encryption status etc), and have set quality standards. It is about moving from lambda to kappa architectures. Data lineage is also included, allowing you to see where the data came from, and what has been done with it. Finally, think about how data is accessed (e.g. stream or API).
+	#	**Federated governance:** You can have both centralized and decentralized governance, by setting general rules but also letting teams set their own rules. For example, you can set common naming and semantics, and set common error handling procedures. 
 *	Live demo of Confluent cloud, which is Kafka cloud native running on Azure/AWS. This demo shows some nice applications of the data mesh features, including the data lineage and catalog (During the Q & A).
 
 §
