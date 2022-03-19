@@ -66,20 +66,27 @@ Finally, the last talk discussed how scalable real time analytics applications c
 !!! Up and running with Materialize
 %%Andy Hattemer, Head of DevEx, Materialize%%
 
-*	Materialize uses the same SQL we are all familiar with. Andy uses SQL for streaming, rather than getting a single transaction.
+<p align="justify">
+In his talk, Any describes what Materialize is and how its architecture differs from traditional OLTP + OLAP architectures. 
+</p>
+
+*	Materialize uses SQL for streaming, rather than getting a single transaction. It is therefore referred to as a 'streaming data warehouse'.
+*	Typically, data warehouses depend on 'online transaction processing' (OLTP) and 'online analytic processing' (OLAP). 
+* 	OLTP + OLAP architectures require each query to be processed from scratch, which can be inefficient for repeated monitoring.
 *	OLTP + OLAP architecture can become problematic as stakeholders become more data literate, and start "demanding" more data.
 *	Latency between OLTP - OLAP can also cause some problems, where OLAP is not updated frequently enough.
-*	Materialize replaces the OLAP as a new "OLVM", which is push based, keeps the requested data and updates it as new data become available.
-*	You start by making a query for Materialize, that you intend you update continously. Materialize will keep updating the results.
+*	Materialize replaces the OLAP as a new 'online view maintenance' (OLVM), which is push based, keeps the requested data and updates it as new data become available.
 *	Materialize is a database built around streaming data, but can also use CDC or log data.
-
-*	You can connect to materialize using regular (Postgres) psql statements in the command line.
-*	It is possible to create a MATERIALIZED VIEW which will return a table that is continously updated. 
-*	With most databases it is not recommended to repeatedly submit the same queries, but for Materialize that doesn't matter, since the results are saved in memory.
+*	With most databases it is not recommended to repeatedly submit the same queries, but for Materialize that does not matter, since the results are saved in memory.
 *	In summary, Materialize lets you build a streaming application using SQL, whilst it takes care of the heavy lifting for you.
-*	Q: Does Materialize run Debezium under the hood? A: Debezium (Kafka Connect) is used upstream of Materialize to prepare data.
 *	Materialize maintains the minimum state required to answer your questions. It is ideal for fast changing data, rather than massive databases which are better for datalakes.
 *	Materialize is best used for in-memory storage, and the amount that you actually keep there are usually small fractions of your database.
+
+Towards the end of his presentation, Andy gave a quick tutorial of how to use Materialize from the command line, using PostgreSQL.
+*	Using Materialize is very easy, since you only need to know SQL. 
+*	To start, first make a query for Materialize, that you intend you update continously. Materialize will keep updating the results automatically.
+*	You can connect to Materialize using regular (Postgres) psql statements in the command line.
+*	It is possible to create a MATERIALIZED VIEW which will return a table that is continously updated. 
 
 §
 
@@ -97,6 +104,11 @@ Finally, the last talk discussed how scalable real time analytics applications c
 
 !!! Data analytics made easy. (Building a Twitter scale analytics application under 10 mins)
 %%Will Xu, Product@Imply%%
+
+<p align="justify">
+Will described the power or real-time analytics in business, showing an example of how Amazon was faster than competitors in dynamically changing their prices. 
+He then described how 'Imply' as a product helps users build analytics applications by taking care of the infrastructure management.
+</p>
 
 *	Real time analytics image from Wall Street Journal. It shows how Amazon alters pricing dynamically, whilst competitors were slow to react.
 *	Druid is the engine that is used commonly used for real-time analytics in most leading companies (minus Google/Facebook), due to its very high speed (depending on the scale).  
