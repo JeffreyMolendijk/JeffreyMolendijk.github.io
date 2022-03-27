@@ -46,16 +46,41 @@
 						<div class="inner">
 							<h1>AWK for bioinformatics</h1>
 							<span class="image main"><img src="images/pic13.jpg" alt="" /></span>
-							<p align="justify">Have you ever been been stuck trying to seach or alter a large document whilst using the Shell, without resorting to your favorite programming language? Searching Stackoverflow would most likely have resulted in a one-line solution using an AWK command as the accepted answer. AWK is a tool that may seem daunting at first, but is so incredibly versatile that you'll wonder why you haven't been using it all along! Although I would typically wrangle data using R or Python, I discovered that this 45 year old command line tool has significantly simplified my workflows. Here I'll describe AWK, its syntax and applications.</p>
-							<h4>What exactly is AWK?</h4>
-							<p align="justify">Introduction, history and reason for writing post. Interestingly, awk was named after its developers by combining the first letter of their surnames;  Aho, Weinberger & Kernighan. To get started using AWK, make sure to read <a href="https://www.gnu.org/software/gawk/manual/gawk.html" target="_blank">the GNU AWK User's Guide</a>, which is an excellent resource explaining the syntax of awk and showing its application through many examples.</p>
-							<h4>Basics of AWK</h4>
-							<p align="justify">The syntax of AWK might look daunting at first, but becomes very intuitive once you are familiar with its components. You can get started with simple commands to retrieve or edits text, and might even begin combining multiple search patterns or actions into a single awk command. A typical command would start by calling awk, and entering both a <b>pattern</b> and an <b>action</b> between quotes. In this example, the pattern could be the string 'hello'  and the action <code>{print $0}</code> indicates that we want the matching line returned. The file to be queried is called 'file.txt' and the output will be saved to 'out.txt'.</p>
-							<pre><code>awk 'pattern {action}'
+							<xmp>
+<p align="justify">
+Have you ever been been stuck trying to seach or alter a large document whilst using the Shell, without resorting to your favorite programming language? 
+Searching Stackoverflow would most likely have resulted in a one-line solution using an AWK command as the accepted answer. 
+AWK is a tool that may seem daunting at first, but is so incredibly versatile that you'll wonder why you haven't been using it all along! 
+Although I would typically wrangle data using R or Python, I discovered that this 45 year old command line tool has significantly simplified my workflows. Here I'll describe AWK, its syntax and applications.
+</p>
 
-awk '/hello/ {print $0}' file.txt > out.txt</code></pre>
-							<h4>Applications of AWK</h4>
-							<p align="justify">Recently, I started analyzing protein sequences using various tools using our high performance computing servers. Each of these tools has different input and vastly different outputs, often requiring some editing of these files. Here I will show some one-liners that I applied to edit the input protein sequences in '.fasta' format. In this case I used the file <a href="'https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz">'uniprot_sprot.fasta'</a>. <em>Note: A .fasta file contains alternating lines containing a header starting with the '>' symbol, followed by a line containing a nucleotide or amino acid sequence. The header line often contains useful information, such as the protein name or the species, by which we could filter the file.</em><pre><code>>sp|Q13510|ASAH1_HUMAN Acid ceramidase OS=Homo sapiens OX=9606 GN=ASAH1 PE=1 SV=5
+!!!! What exactly is AWK?
+<p align="justify">
+Introduction, history and reason for writing post. Interestingly, awk was named after its developers by combining the first letter of their surnames;  Aho, Weinberger & Kernighan. 
+To get started using AWK, make sure to read <a href="https://www.gnu.org/software/gawk/manual/gawk.html" target="_blank">the GNU AWK User's Guide</a>, which is an excellent resource explaining the syntax of awk and showing its application through many examples.
+</p>
+
+!!!! Basics of AWK
+<p align="justify">
+The syntax of AWK might look daunting at first, but becomes very intuitive once you are familiar with its components. 
+You can get started with simple commands to retrieve or edits text, and might even begin combining multiple search patterns or actions into a single awk command. 
+A typical command would start by calling awk, and entering both a <b>pattern</b> and an <b>action</b> between quotes. 
+In this example, the pattern could be the string 'hello'  and the action <code>{print $0}</code> indicates that we want the matching line returned. 
+The file to be queried is called 'file.txt' and the output will be saved to 'out.txt'.
+</p>
+<pre><code>
+awk 'pattern {action}'
+
+awk '/hello/ {print $0}' file.txt > out.txt
+</code></pre>
+
+!!!! Applications of AWK
+<p align="justify">
+Recently, I started analyzing protein sequences using various tools using our high performance computing servers. 
+Each of these tools has different input and vastly different outputs, often requiring some editing of these files. 
+Here I will show some one-liners that I applied to edit the input protein sequences in '.fasta' format. 
+In this case I used the file <a href="'https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz">'uniprot_sprot.fasta'</a>. 
+<em>Note: A .fasta file contains alternating lines containing a header starting with the '>' symbol, followed by a line containing a nucleotide or amino acid sequence. The header line often contains useful information, such as the protein name or the species, by which we could filter the file.</em><pre><code>>sp|Q13510|ASAH1_HUMAN Acid ceramidase OS=Homo sapiens OX=9606 GN=ASAH1 PE=1 SV=5
 MPGRSCVALVLLAAAVSCAVAQHAPPWTEDCRKSTYPPSGPTYRGAVPWYTINLDLPPYK
 RWHELMLDKAPVLKVIVNSLKNMINTFVPSGKIMQVVDEKLPGLLGNFPGPFEEEMKGIA
 AVTDIPLGEIISFNIFYELFTICTSIVAEDKKGHLIHGRNMDFGVFLGWNINNDTWVITE
@@ -63,12 +88,18 @@ QLKPLTVNLDFQRNNKTVFKASSFAGYVGMLTGFKPGLFSLTLNERFSINGGYLGILEWI
 LGKKDVMWIGFLTRTVLENSTSYEEAKNLLTKTKILAPAYFILGGNQSGEGCVITRDRKE
 SLDVYELDAKQGRWYVVQTNYDRWKHPFFLDDRRTPAKMCLNRTSQENISFETMYDVLST
 KPVLNKLTVYTTLIDVTKGQFETYLRDCPDPCIGW</code></pre><br>The commands below can be used for the following goals, make sure to give them a try!</p>
-							<ul>
-								<li>Filtering the .fasta file to retain human 'Homo sapiens' information</li>
-								<li>Replace the characters U and X with * in the sequences</li>
-								<li>Third</li>
-							</ul>
-							<p>Final note</p>
+<ul>
+	<li>Filtering the .fasta file to retain human 'Homo sapiens' information</li>
+	<li>Replace the characters U and X with * in the sequences</li>
+	<li>Third</li>
+</ul>
+
+!!!! Final note
+
+							</xmp>
+							<script src="pendown/pendown.js"></script>
+
+
 						</div>
 					</div>
 
