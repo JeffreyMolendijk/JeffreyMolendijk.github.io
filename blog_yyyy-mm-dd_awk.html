@@ -89,12 +89,17 @@ LGKKDVMWIGFLTRTVLENSTSYEEAKNLLTKTKILAPAYFILGGNQSGEGCVITRDRKE
 SLDVYELDAKQGRWYVVQTNYDRWKHPFFLDDRRTPAKMCLNRTSQENISFETMYDVLST
 KPVLNKLTVYTTLIDVTKGQFETYLRDCPDPCIGW</code></pre><br>The commands below can be used for the following goals, make sure to give them a try!</p>
 <ul>
-	<li>Filtering the .fasta file to retain human 'Homo sapiens' information</li>
+	<li>Filtering the .fasta file to retain human 'Homo sapiens' information by filtering by species code '9606'</li>
 	<li>Replace the characters U and X with * in the sequences</li>
-	<li>Third</li>
 </ul>
 
-!!!! Final note
+<code>
+echo "Filtering human data"
+awk '/^>/ { p = ($0 ~ /9606/)} p' uniprot_sprot.fasta>uniprot_sprot_human.fasta;
+
+echo "Replacing U and X in the fasta sequences with *"
+sed -E '/(>)/!s/[UX]/\*/g' < /data/gpfs/projects/punim1647/uniprot/uniprot_sprot_human.fasta > /data/gpfs/projects/punim1647/uniprot/uniprot_sprot_human_asterisk.fasta
+</code>
 
 							</xmp>
 							<script src="pendown/pendown.js"></script>
