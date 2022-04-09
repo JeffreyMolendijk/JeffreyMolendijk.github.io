@@ -68,8 +68,7 @@ A typical command would start by calling awk, and entering both a <b>pattern</b>
 In this example, the pattern could be the string 'hello'  and the action <code>{print $0}</code> indicates that we want the matching line returned. 
 The file to be queried is called 'file.txt' and the output will be saved to 'out.txt'.
 </p>
-<pre><code>
-awk 'pattern {action}'
+<pre><code>awk 'pattern {action}'
 
 awk '/hello/ {print $0}' file.txt > out.txt
 </code></pre>
@@ -93,14 +92,14 @@ KPVLNKLTVYTTLIDVTKGQFETYLRDCPDPCIGW</code></pre><br>The commands below can be us
 	<li>Replace the characters U and X with * in the sequences</li>
 </ul>
 
-<code>
-echo "Filtering human data"
+<pre>
+<code>echo "Filtering human data"
 awk '/^>/ { p = ($0 ~ /9606/)} p' uniprot_sprot.fasta>uniprot_sprot_human.fasta;
 
 echo "Replacing U and X in the fasta sequences with *"
 sed -E '/(>)/!s/[UX]/\*/g' < /data/gpfs/projects/punim1647/uniprot/uniprot_sprot_human.fasta > /data/gpfs/projects/punim1647/uniprot/uniprot_sprot_human_asterisk.fasta
 </code>
-
+</pre>
 							</xmp>
 							<script src="pendown/pendown.js"></script>
 
